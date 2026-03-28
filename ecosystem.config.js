@@ -27,7 +27,7 @@ module.exports = {
         repo: 'git@github.com:Supreeth741/meme-mart.git',
         path: '/home/ubuntu/mememart',
         key: "../stagingsshkey.pem",
-        'post-deploy': 'pm2 startOrRestart ecosystem.config.js --name mememart_service'
+        'post-deploy': 'npm install && cd mememart-frontend && npm install && cd .. && npm run build:all && pm2 startOrRestart ecosystem.config.js --env production --name mememart_service'
       },
       // production: {
       //   user: 'bitnami',
