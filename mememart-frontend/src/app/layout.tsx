@@ -6,7 +6,7 @@ import Footer from '@/components/Footer';
 import { Toaster } from 'react-hot-toast';
 
 export const metadata: Metadata = {
-  title: 'MemeCart - Meme Marketplace',
+  title: 'MemeMart - Meme Marketplace',
   description: 'Browse, upload, and download the best memes, videos, and audio clips.',
 };
 
