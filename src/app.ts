@@ -49,8 +49,12 @@ app.use(helmet({
         "https://*.googleapis.com",
         "https://*.firebaseio.com",
         "wss://*.firebaseio.com",
+        "https://*.firebase.com",
+        "https://identitytoolkit.googleapis.com",
+        "https://securetoken.googleapis.com",
       ],
-      frameSrc: ["'none'"],
+      // Firebase auth popup needs to load accounts.google.com in a frame
+      frameSrc: ["'self'", "https://*.firebaseapp.com", "https://accounts.google.com"],
       objectSrc: ["'none'"],
       // Disable upgrade-insecure-requests — the server runs plain HTTP
       upgradeInsecureRequests: null,
@@ -58,8 +62,9 @@ app.use(helmet({
   },
   // HSTS must not be sent over plain HTTP
   hsts: false,
-  // COOP is meaningless on non-HTTPS/non-localhost origins; suppress the browser warning
-  crossOriginOpenerPolicy: false,
+  // Firebase signInWithPopup requires unsafe-none (not just removing the header)
+  // so the parent page can read window.closed on the auth popup
+  crossOriginOpenerPolicy: { policy: "unsafe-none" },
   // Disable Origin-Agent-Cluster header to avoid "site-keyed agent cluster" warning
   originAgentCluster: false,
 }));
