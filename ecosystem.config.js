@@ -23,9 +23,9 @@ module.exports = {
       staging: {
         user: 'ubuntu',
         host: '3.6.93.51',
-        ref: 'origin/main',
-        repo: 'git@github.com:IMMORTALCHIRU/mememart_backend.git',
-        path: '/home/ubuntu/mememart_backend',
+        ref: 'origin/master',
+        repo: 'git@github.com:Supreeth741/meme-mart.git',
+        path: '/home/ubuntu/mememart',
         key: "../stagingsshkey.pem",
         'post-deploy': 'pm2 startOrRestart ecosystem.config.js --name mememart_service'
       },
