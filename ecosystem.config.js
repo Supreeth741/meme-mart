@@ -25,7 +25,7 @@ module.exports = {
         host: '3.6.93.51',
         ref: 'origin/main',
         repo: 'git@github.com:Supreeth741/meme-mart.git',
-        path: '/home/ubuntu/mememart_backend',
+        path: '/home/ubuntu/mememart',
         key: "../stagingsshkey.pem",
         'post-deploy': 'pm2 startOrRestart ecosystem.config.js --name mememart_service'
       },
