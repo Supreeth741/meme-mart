@@ -22,7 +22,7 @@ module.exports = {
     deploy: {
       staging: {
         user: 'ubuntu',
-        host: '3.6.93.51',
+        host: '52.66.103.53',
         ref: 'origin/master',
         repo: 'git@github.com:Supreeth741/meme-mart.git',
         path: '/home/ubuntu/mememart',
